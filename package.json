@@ -1,0 +1,11 @@
+{
+  "name": "lanterns",
+  "version": "0.0.1",
+  "description": "Three project for generating and exploring a bunch of floating lanterns in a 3d space",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Terry",
+  "license": "ISC"
+}
