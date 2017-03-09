@@ -13,7 +13,7 @@ app.use(volleyball);
 
 //set up public routes for css and three and stuff
 // app.use('/js/three.min.js', express.static(path.join(__dirname, '../node_modules/three/build/three.min.js')));
-app.use(express.static(path.join(__dirname, '../public')));
+app.use(express.static(path.resolve(__dirname, '..', 'public')));
 
 //set up routes to access app
 app.get('/', (req, res, next) => {

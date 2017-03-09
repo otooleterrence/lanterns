@@ -31,7 +31,7 @@ function init() {
     let canvas = document.getElementsByTagName('canvas');
     console.log(canvas);
 
-    //trying to get the renderer sice to be the size of the canvass not the size of the window
+    //trying to get the renderer size to be the size of the canvas not the size of the window
 
     renderer.setSize( canvas.width, canvas.height );
 }

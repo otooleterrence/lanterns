@@ -10,14 +10,14 @@ body {
   border: 10px solid green;
 }
 
-.app {
+#app {
   width: auto;
-  border: 15px solid lightblue;
-  height: 100%;
+  border: 5px solid lightblue;
+  /*height: 100%;*/
 }
 
-canvas {
+/*canvas {
   border: 2px solid red;
   width: 100%;
   height: 500px;
-}
+}*/
