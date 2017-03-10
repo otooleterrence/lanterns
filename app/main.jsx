@@ -11,5 +11,5 @@ render(
   <Router history={browserHistory}>
     <Route path="/" component={ThreeComponent} />
   </Router>,
-  document.getElementById('app')
+  document.body
 );
