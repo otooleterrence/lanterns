@@ -8,11 +8,11 @@
     <link rel="stylesheet" href="/css/styles.css" />
     <!-- <link rel="stylesheet" href="/css/bootstrap.css" /> -->
     <!-- <script type="text/javascript" src="bundle.js" /> -->
-    <!-- <script src=/js/three.min.js ></script> -->
+    <script src=/js/three.min.js ></script>
 
 
   </head>
-  <body>
+  <!-- <body> -->
 
     <!-- <div id=app> -->
       <!-- <h1>This is the Lanterns App thing</h1>
@@ -23,9 +23,27 @@
       <p>this is where the texture mapper will be</p> -->
     <!-- </div> -->
 
-  </body>
+  <!-- </body> -->
 
   <!-- <script src=/js/lanterns.js ></script> -->
-  <script src=/bundle.js ></script>
+  <!-- <script src=/bundle.js ></script> -->
 
+
+
+  <body>
+    <script src="../build/three.js"></script>
+    <script src="js/controls/PointerLockControls.js"></script>
+
+    <div id="blocker">
+
+      <div id="instructions">
+        <span style="font-size:40px">Click to play</span>
+        <br />
+        (W, A, S, D = Move, SPACE = Jump, MOUSE = Look around)
+      </div>
+
+    </div>
+
+  </body>
+  <script src="js/fpc.js"></script>
 </html>

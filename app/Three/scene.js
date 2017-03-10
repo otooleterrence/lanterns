@@ -1,7 +1,7 @@
 /*eslint-disable-global THREE*/
 
-import THREE from 'three';
-
+// import THREE from 'react-three';
+console.log('three: ', THREE);
 // var scene, camera, renderer;
 // var geometry, material, mesh;
 
@@ -14,7 +14,8 @@ let scene = new THREE.Scene();
 
 
 let camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 10000 );
-camera.position.z = 1000;
+console.log('camera: ', camera);
+// camera.position.z = 1000;
 
 let geometry = new THREE.BoxGeometry( 200, 200, 200 );
 let material = new THREE.MeshBasicMaterial( { color: 0xff0000, wireframe: true } );
