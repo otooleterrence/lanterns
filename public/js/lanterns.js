@@ -34,8 +34,11 @@ function animate() {
 
     requestAnimationFrame(animate);
 
-    mesh.rotation.x += 0.01;
-    mesh.rotation.y += 0.02;
+    var time = performance.now() * 0.001;
+    objects.position.y = Math.sin( time ) * 1;
+
+    // mesh.rotation.x += 0.01;
+    // mesh.rotation.y += 0.02;
 
     renderer.render(scene, camera);
 

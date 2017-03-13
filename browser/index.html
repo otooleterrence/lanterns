@@ -8,7 +8,19 @@
     <link rel="stylesheet" href="/css/styles.css" />
     <!-- <link rel="stylesheet" href="/css/bootstrap.css" /> -->
     <!-- <script type="text/javascript" src="bundle.js" /> -->
-    <script src=/js/three.min.js ></script>
+    <script src="js/three.min.js"></script>
+    <script src="js/Mirror.js"></script>
+		<script src="js/WaterShader.js"></script>
+    <script src="js/EffectComposer.js"></script>
+    <script src="js/RenderPass.js"></script>
+    <script src="js/ShaderPass.js"></script>
+    <script src="js/CopyShader.js"></script>
+    <script src="js/ConvolutionShader.js"></script>
+		<script src="js/BloomPass.js"></script>
+		<script src="js/FilmShader.js"></script>
+		<script src="js/FilmPass.js"></script>
+		<script src="js/OBJLoader.js"></script>
+
 
 
   </head>
@@ -31,13 +43,13 @@
 
 
   <body>
-    <script src="../build/three.js"></script>
+    <!-- <script src="../build/three.js"></script> -->
     <script src="js/controls/PointerLockControls.js"></script>
 
     <div id="blocker">
 
       <div id="instructions">
-        <span style="font-size:40px">Click to play</span>
+        <span style="font-size:40px">Lanterns App</span>
         <br />
         (W, A, S, D = Move, SPACE = Jump, MOUSE = Look around)
       </div>
@@ -45,5 +57,25 @@
     </div>
 
   </body>
+  <script type="x-shader/x-vertex" id="vertexShader">
+			varying vec3 vWorldPosition;
+			void main() {
+				vec4 worldPosition = modelMatrix * vec4( position, 1.0 );
+				vWorldPosition = worldPosition.xyz;
+				gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
+			}
+		</script>
+
+		<script type="x-shader/x-fragment" id="fragmentShader">
+			uniform vec3 topColor;
+			uniform vec3 bottomColor;
+			uniform float offset;
+			uniform float exponent;
+			varying vec3 vWorldPosition;
+			void main() {
+				float h = normalize( vWorldPosition + offset ).y;
+				gl_FragColor = vec4( mix( bottomColor, topColor, max( pow( max( h , 0.0), exponent ), 0.0 ) ), 1.0 );
+			}
+		</script>
   <script src="js/fpc.js"></script>
 </html>
